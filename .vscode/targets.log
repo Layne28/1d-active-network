@@ -1,0 +1,736 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue Sep 13 19:07:52 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# makefile (from 'makefile', line 13)
+TEST_SRC_DIR := test/src
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/lfrechette/research/active-network
+# makefile (from 'makefile', line 25)
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/106
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:53466
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+USERNAME = lfrechette
+# makefile (from 'makefile', line 18)
+SOURCES := src/Observer.cpp src/Spring.cpp src/Experiment.cpp src/LabBench.cpp src/System.cpp src/Node.cpp src/main.cpp src/Solver.cpp src/CustomRandom.cpp src/ParamDict.cpp
+# makefile (from 'makefile', line 11)
+OBJ_DIR := build
+# makefile (from 'makefile', line 28)
+CXXFLAGS := -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+_ = /snap/code/106/usr/share/code/code
+# environment
+MANAGERPID = 1998
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/lfrechette
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/106/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/lfrechette/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# makefile (from 'makefile', line 17)
+TEST_EXECUTABLE := test_active_network
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/lbf-hagan-lab-dell:@/tmp/.ICE-unix/2218,unix/lbf-hagan-lab-dell:/tmp/.ICE-unix/2218
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/lfrechette/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/106
+# environment
+SNAP_VERSION = 784b0177
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = e99351d51efb4428b024b7f6ee57ff05
+# makefile (from 'makefile', line 37)
+LDFLAGS := -fopenmp -lm -lgsl -lgslcblas -llapack -lblas -larmadillo -pg -L/home/lfrechette/lib 
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/106/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'makefile', line 19)
+TEST_SOURCES := test/src/Observer.test.cpp test/src/Spring.test.cpp test/src/Experiment.test.cpp test/src/System.test.cpp test/src/Node.test.cpp test/src/main.test.cpp test/src/Solver.test.cpp test/src/ParamDict.test.cpp test/src/LabBench.test.cpp
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 234324
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# makefile (from 'makefile', line 46)
+TEST_OBJECTS := test/build/Observer.test.o test/build/Spring.test.o test/build/Experiment.test.o test/build/System.test.o test/build/Node.test.o test/build/main.test.o test/build/Solver.test.o test/build/ParamDict.test.o test/build/LabBench.test.o build/Observer.o build/Spring.o build/Experiment.o build/LabBench.o build/System.o build/Node.o build/Solver.o build/CustomRandom.o build/ParamDict.o
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/lfrechette/research/active-network
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 2181
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/lfrechette
+# makefile (from 'makefile', line 34)
+OPTFLAGS := -pg -O2
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/lfrechette/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
+# environment
+LOGNAME = lfrechette
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+MATHEMATICA_HOME = /usr/local/Wolfram/Mathematica/13.1
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = VPZqVlgFxMkRDId6ThWCX9XTA5OBeiIugKxkRCpQZEunYeyoOdju
+# makefile (from 'makefile', line 20)
+HEADERS := src/Node.hpp src/Observer.hpp src/Spring.hpp src/Experiment.hpp src/System.hpp src/CustomRandom.hpp src/Solver.hpp src/ParamDict.hpp src/LabBench.hpp
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/lfrechette/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# environment
+SNAP_REAL_HOME = /home/lfrechette
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/lfrechette/snap/code/106
+# environment
+SHLVL = 0
+# makefile (from 'makefile', line 41)
+OBJECTS_NO_MAIN = $(filter-out $(OBJ_DIR)/main.o,$(OBJECTS))
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = lfrechette
+# environment
+SNAP_REVISION = 106
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'makefile', line 14)
+TEST_OBJ_DIR := test/build
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# makefile (from 'makefile', line 33)
+PROFILE = -pg
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-867e7bb4-1.71.0-main.sock
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'makefile', line 21)
+TEST_HEADERS := test/src/System.test.hpp test/src/catch.hpp
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+NO_AT_BRIDGE = 1
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = VPZqVlgFxMkRDId6ThWCX9XTA5OBeiIugKxkRCpQZEunYeyoOdju
+# makefile (from 'makefile', line 10)
+SRC_DIR := src
+# automatic
+<F = $(notdir $<)
+# makefile (from 'makefile', line 16)
+EXECUTABLE := active_network
+# makefile (from 'makefile', line 23)
+CXX := g++
+# environment
+SNAP_NAME = code
+# makefile (from 'makefile', line 12)
+BIN_DIR := bin
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# makefile (from 'makefile', line 40)
+OBJECTS := build/Observer.o build/Spring.o build/Experiment.o build/LabBench.o build/System.o build/Node.o build/main.o build/Solver.o build/CustomRandom.o build/ParamDict.o
+# environment
+ 
+LANG = C
+# environment
+VSCODE_PID = 228198
+# variable set hash-table stats:
+# Load=135/1024=13%, Rehash=0, Collisions=17/205=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# test/src (device 66307, inode 50070552): 13 files, no impossibilities.
+# . (device 66307, inode 50070441): 16 files, no impossibilities.
+# src (device 66307, inode 50070549): 21 files, no impossibilities.
+
+# 50 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+test/build/%.o: test/src/%.cpp
+#  recipe to execute (from 'makefile', line 59):
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+src/Experiment.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.634771251
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/Node.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.634771251
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ParamDict.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.642771205
+#  File has been updated.
+#  Successfully updated.
+
+build/main.o: src/main.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'main'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# Not a target:
+test/src/LabBench.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: src/Observer.cpp src/Spring.cpp src/Experiment.cpp src/LabBench.cpp src/System.cpp src/Node.cpp src/main.cpp src/Solver.cpp src/CustomRandom.cpp src/ParamDict.cpp src/Node.hpp src/Observer.hpp src/Spring.hpp src/Experiment.hpp src/System.hpp src/CustomRandom.hpp src/Solver.hpp src/ParamDict.hpp src/LabBench.hpp bin/active_network
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+# Not a target:
+test/src/Spring.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Solver.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 10:56:44.490170017
+#  File has been updated.
+#  Successfully updated.
+
+build/Node.o: src/Node.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'Node'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+build/ParamDict.o: src/ParamDict.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'ParamDict'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# Not a target:
+test/src/main.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/System.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-25 16:51:24.928382227
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/build/LabBench.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Observer.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 19:07:37.414729006
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/build/Spring.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test: test/src/Observer.test.cpp test/src/Spring.test.cpp test/src/Experiment.test.cpp test/src/System.test.cpp test/src/Node.test.cpp test/src/main.test.cpp test/src/Solver.test.cpp test/src/ParamDict.test.cpp test/src/LabBench.test.cpp test/src/System.test.hpp test/src/catch.hpp bin/test_active_network
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:19.498777628
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/Solver.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.642771205
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/src/Experiment.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/src/Node.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/System.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.642771205
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/build/main.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/src/ParamDict.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Observer.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 14:49:00.787808766
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/src/catch.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/CustomRandom.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.634771251
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/build/Experiment.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/build/Node.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/build/ParamDict.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Solver.o: src/Solver.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'Solver'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+build/System.o: src/System.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'System'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/LabBench.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 19:05:25.495660986
+#  File has been updated.
+#  Successfully updated.
+
+build/Observer.o: src/Observer.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'Observer'
+#  Last modified 2022-09-06 15:43:14.949032491
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build/Observer.o
+# automatic
+# % := 
+# automatic
+# * := Observer
+# automatic
+# + := src/Observer.cpp
+# automatic
+# | := 
+# automatic
+# < := src/Observer.cpp
+# automatic
+# ^ := src/Observer.cpp
+# automatic
+# ? := src/Observer.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# Not a target:
+src/CustomRandom.hpp:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-08-24 18:05:20.634771251
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/Spring.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.642771205
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 69):
+	rm -f $(OBJ_DIR)/*.o $(TEST_OBJ_DIR)/*.o $(BIN_DIR)/$(EXECUTABLE) $(BIN_DIR)/$(TEST_EXECUTABLE)
+
+bin/active_network: build/Observer.o build/Spring.o build/Experiment.o build/LabBench.o build/System.o build/Node.o build/main.o build/Solver.o build/CustomRandom.o build/ParamDict.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-09-06 19:05:50.555483776
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'makefile', line 63):
+	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
+
+# Not a target:
+test/src/Solver.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 19:04:01.640254617
+#  File has been updated.
+#  Successfully updated.
+
+bin/test_active_network: test/build/Observer.test.o test/build/Spring.test.o test/build/Experiment.test.o test/build/System.test.o test/build/Node.test.o test/build/main.test.o test/build/Solver.test.o test/build/ParamDict.test.o test/build/LabBench.test.o build/Observer.o build/Spring.o build/Experiment.o build/LabBench.o build/System.o build/Node.o build/Solver.o build/CustomRandom.o build/ParamDict.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 65):
+	$(CXX) $(TEST_OBJECTS) $(LDFLAGS) -o $@
+
+# Not a target:
+src/LabBench.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 15:47:02.139841036
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/src/System.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/src/Observer.test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Spring.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.642771205
+#  File has been updated.
+#  Successfully updated.
+
+build/CustomRandom.o: src/CustomRandom.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'CustomRandom'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# Not a target:
+src/Experiment.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.634771251
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/Node.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-25 13:01:02.864590531
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/build/Solver.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/ParamDict.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-24 18:05:20.642771205
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+test/src/System.test.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+test/build/System.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Experiment.o: src/Experiment.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'Experiment'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+build/LabBench.o: src/LabBench.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'LabBench'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# Not a target:
+test/build/Observer.test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 51):
+	install bin/* /usr/local/bin/
+
+build/Spring.o: src/Spring.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'Spring'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	$(CXX) -c $(CXXFLAGS) $(OPTFLAGS) $< -o $@
+
+# files hash-table stats:
+# Load=58/1024=6%, Rehash=0, Collisions=3/141=2%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 119 / storage = 1751 B / avg = 14 B
+# current buf: size = 8162 B / used = 1751 B / count = 119 / avg = 14 B
+
+# strcache performance: lookups = 177 / hit rate = 32%
+# hash-table stats:
+# Load=119/8192=1%, Rehash=0, Collisions=3/177=2%
+# Finished Make data base on Tue Sep 13 19:07:52 2022
+
+ 

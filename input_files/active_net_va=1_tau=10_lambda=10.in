@@ -1,0 +1,37 @@
+#System
+rho = 1.0
+a = 1.0
+dim = 1
+N = 100
+La = 100
+is_p_x = 1
+node_protocol = uniform
+spring_protocol = uniform
+l0 = 1.0
+K = 1.0
+kT = 0.0
+repulsion_on = 1
+repulsive_sigma = 0.3
+repulsive_eps = 1.0
+
+#Solver
+dt = 0.0001
+gamma = 1.0
+va = 1.000000
+
+#Observer
+output_dir = /scratch0/laynefrechette/1d-active-network-results/va=1.000000/tau=10.000000/lambda=10.000000/Nx=100/nx=10000
+network_freq = 10
+thermo_freq = 10
+
+#LabBench
+experiment = standard
+equil_steps = 50000
+production_steps = 100000
+info_freq = 1000
+
+#Active Noise Generator
+dim = 1
+nx = 10000
+tau = 10.000000
+lambda = 10.000000

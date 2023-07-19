@@ -1,0 +1,15 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/lfrechette/research/active-network'
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/Observer.cpp -o build/Observer.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/Spring.cpp -o build/Spring.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/Experiment.cpp -o build/Experiment.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/LabBench.cpp -o build/LabBench.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/System.cpp -o build/System.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/Node.cpp -o build/Node.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/main.cpp -o build/main.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/Solver.cpp -o build/Solver.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/CustomRandom.cpp -o build/CustomRandom.o
+g++ -c -std=c++17 -Wextra -pedantic -Wall -W -Wmissing-declarations -Wuninitialized -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -fshort-enums -fno-common -m64 -fopenmp -I/home/lfrechette/include -pg -O2 src/ParamDict.cpp -o build/ParamDict.o
+g++ build/Observer.o build/Spring.o build/Experiment.o build/LabBench.o build/System.o build/Node.o build/main.o build/Solver.o build/CustomRandom.o build/ParamDict.o -fopenmp -lm -lgsl -lgslcblas -llapack -lblas -larmadillo -pg -L/home/lfrechette/lib  -o bin/active_network
+make: Leaving directory '/home/lfrechette/research/active-network'
+ 
