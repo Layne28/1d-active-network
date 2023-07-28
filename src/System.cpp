@@ -15,7 +15,6 @@ System::System(ParamDict &theParams)
     is_p_x = false;
     can_break = 0;
     obs = nullptr;
-    repulsion_on = 1;
     repulsive_sigma = 0.3;
     repulsive_eps = 0.1;
     drmax = 0.5;
@@ -41,11 +40,11 @@ System::System(ParamDict &theParams)
     if(theParams.is_key("l0")) l0 = std::stod(theParams.get_value("l0"));
     if(theParams.is_key("K")) K = std::stod(theParams.get_value("K"));
     if(theParams.is_key("potential_type")) potential_type = theParams.get_value("potential_type");
-    if(theParams.is_key("repulsion_on")) repulsion_on = std::stod(theParams.get_value("repulsion_on"));
     if(theParams.is_key("repulsive_sigma")) repulsive_sigma = std::stod(theParams.get_value("repulsive_sigma"));
     if(theParams.is_key("repulsive_eps")) repulsive_eps = std::stod(theParams.get_value("repulsive_eps"));
     if(theParams.is_key("drmax")) drmax = std::stod(theParams.get_value("drmax"));
 
+    std::cout << "Using " << potential_type << " potential." << std::endl;
     //Compute parameters that are inferred from other parameters
     //TODO: fix for non-cubic 
     Lx = a*La;
@@ -198,8 +197,6 @@ double System::get_energy()
             else{
                 std::cout << "WARNING: potential type not recognized!" << std::endl;
             }
-            energy += 0.5*K*(dist-l0)*(dist-l0);
-            if(repulsion_on) energy += get_wca_potential(dist,repulsive_sigma,repulsive_eps);
         }
     }
     energy *= 0.5; //correct for double-counting bonds
@@ -226,28 +223,25 @@ arma::vec System::get_force(Node &n1)
         double l0 = n1.springs[j].get_rest_length();
         Node *n2 = n1.springs[j].node2;
         if(n1.is_equal(*n2)) n2 = n1.springs[j].node1;
-        //if(n1.get_id()==(*n2).get_id()) std::cout << "id1: " << n1.get_id() << " id2: " << (*n2).get_id() << std::endl;
+
         arma::vec disp = get_disp_vec(n1, *n2);
         double dist = get_dist(n1, *n2);
-        //std::cout << n1 << std::endl;
-        //std::cout << *n2 << std::endl;
+
         if (dist<1e-15) throw std::runtime_error("ERROR: attempting to divide by zero in force calculation!");
 
         if (potential_type=="harmonic"){
-            force += get_harmonic_force(dist, disp, K, l0);//-K*(dist-l0)*disp/dist; //harmonic force
+            force += get_harmonic_force(dist, disp, K, l0);
         }
         else if(potential_type=="harmonic_wca"){
             force += get_harmonic_force(dist, disp, K, l0) + get_wca_force(dist, disp, repulsive_sigma, repulsive_eps);
         }
         else if(potential_type=="fene"){
-            force += ;
+            force += get_fene_force(dist, disp, K, l0, drmax);
         }
         else{
             std::cout << "WARNING: potential type not recognized!" << std::endl;
         }
     }
-    //std::cout << "force: " << force << std::endl;
-    //std::cout << std::endl;
     return force;
 }
 
@@ -316,9 +310,11 @@ double System::get_harmonic_potential(double r, double K, double l0) {
     return 0.5*K*(r-l0)*(r-l0);
 }
 
-double System::get_fene_potential(double r, double K, double l0, double drmax) {
+double System::get_fene_potential(double r, double K, double l0, double dr) {
 
-    return -0.5*K*drmax*drmax*log(1-((r-l0)/drmax)*((r-l0)/drmax));
+    //check that r>dr
+    if (r<=l0-dr || r>=l0+dr) return 1e20;
+    else return -0.5*K*dr*dr*log(1-((r-l0)/dr)*((r-l0)/dr));
 }
 
 arma::vec System::get_lj_force(double r, arma::vec rvec, double sig, double eps) {
@@ -348,7 +344,10 @@ arma::vec System::get_harmonic_force(double r, arma::vec rvec, double K, double 
     return -K*(r-l0)*rvec/r;
 }
 
-arma::vec System::get_fene_force(double r, arma::vec rvec, double K, double l0, double drmax) {
+arma::vec System::get_fene_force(double r, arma::vec rvec, double K, double l0, double dr) {
 
-    return -K*(r-l0)/(1-((r-l0)/drmax)*((r-l0)/drmax))*rvec/r;
+    arma::vec big_force = arma::ones(dim)*1e20;
+
+    if(r<=l0-dr || r>=l0+dr) return big_force;
+    else return -K*(r-l0)/(1-((r-l0)/dr)*((r-l0)/dr))*rvec/r;
 }

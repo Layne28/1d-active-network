@@ -31,7 +31,6 @@ public:
     double Lx; //box dimensions
     int is_p_x; //periodic or not
     int can_break; //can the bonds break or not
-    int repulsion_on; //turn on short-range WCA repulsion
     double repulsive_sigma; //range of repulsive force
     double repulsive_eps; //strength of repulsive force
     double drmax; //parameter for fene potential

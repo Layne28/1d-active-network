@@ -110,8 +110,8 @@ void ActiveSolver::update_adaptive(System &theSys, double deet, int level)
 
     //only decrease time step if force is above threshold
     //and timestep is not already tiny
-    if(max_force > force_thresh && deet>1e-6){
-        std::cout << "Force too high. Decreasing time step by a factor of 4 (now =" << deet/4 << ")." << std::endl;
+    if(max_force > force_thresh && deet>1e-10){
+        if(level==0) std::cout << "Force too high. Decreasing time step by a factor of 4 (now =" << deet/4 << ")." << std::endl;
         //revert to old position
         for(int i=0; i<theSys.N; i++){
             theSys.network[i].pos = theSys.network[i].old_pos;

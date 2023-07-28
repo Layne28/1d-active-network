@@ -1,2 +1,4 @@
 seeds/*
 slurm*
+input_files/*
+bulid/*.o
