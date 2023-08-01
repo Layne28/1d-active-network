@@ -1,41 +1,38 @@
 #System
-rho = 1.414213562373095
-a = 1.414213562373095
-dim = 3
-Nx = 4
-Ny = 4
-Nz = 4
-Lax = 4
-Lay = 4
-Laz = 4
+rho = 1.0
+a = 1.0
+dim = 1
+N = 100
+La = 100
 is_p_x = 1
-is_p_y = 1
-is_p_z = 1
-node_protocol = fcc
+node_protocol = uniform
 spring_protocol = uniform
 l0 = 1.0
 K = 1.0
+kT = 0.0
+potential_type = fene
+drmax = 0.7
 
 #Solver
-dt = 0.002
+dt = 0.0001
 gamma = 1.0
 va = 1.000000
-do_subract_com = 1
+do_subtract_com = 1
+do_pin_node = 1
 
 #Observer
-output_dir = ./testdir
-network_freq = 100
-thermo_freq = 100
+output_dir = ./testdir 
+network_freq = 1000
+thermo_freq = 1000
 
 #LabBench
 experiment = standard
-equil_steps = 5000
-production_steps = 10000
-info_freq = 1000
+equil_steps = 500000
+production_steps = 1000000
+info_freq = 10000
 
 #Active Noise Generator
-nx = 16
-ny = 16
-nz = 16
-tau = 1.00000
-lambda = 1.000000
+dim = 1
+nx = 10000
+tau = 1.000000
+lambda = 10.000000

@@ -12,7 +12,7 @@ conf_file=$1
 seed=$2
 seed_file=$3
 
-echo "Running active network with conf file: $conf_file"
+echo "Running 1d active network with input file: $conf_file"
 
 run_dir="/home/laynefrechette/1d-active-network/bin/"
 

@@ -20,6 +20,7 @@ public:
     /*** Variables ***/
     double va = 1.0;
     double force_thresh = 200.0;
+    int num_decrease_dt = 0; //keep track of how many times timestep has been decreased
 
     /*** Methods ***/
 

@@ -1,13 +1,10 @@
 #!/bin/bash
 
-Nx=$1
-Ny=$2
-Nz=$3
-nx=$4
-
-taus=(0.010000 0.100000 0.300000 1.000000 10.000000)
-lambdas=(0.010000 0.100000 0.300000 1.000000 2.000000 5.000000)
-vas=(0.100000)
+N=100
+nx=10000
+taus=(0.030000 0.100000 0.300000 1.000000 10.000000)
+lambdas=(0.100000 0.300000 1.000000 3.000000 10.000000)
+vas=(0.010000 0.030000 0.100000 0.300000 1.000000)
 
 for tau in "${taus[@]}"
 do
@@ -15,10 +12,9 @@ do
     do
         for va in "${vas[@]}"
         do
-            #filename="seeds/seeds_Nx=${Nx}_nx=${nx}_va=${va}_tau=${tau}_lambda=${lambda}.txt"
-            filename="seeds/seeds_Nx=${Nx}_Ny=${Ny}_Nz=${Nz}_nx=${nx}_va=${va}_tau=${tau}_lambda=${lambda}.txt"
+            filename="seeds/seeds_N=${N}_nx=${nx}_va=${va}_tau=${tau}_lambda=${lambda}.txt"
             touch $filename
-            for i in {1..100}
+            for i in {1..5}
             do
                 printf "$RANDOM\n" >> $filename
             done
