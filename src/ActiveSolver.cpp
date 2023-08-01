@@ -45,6 +45,7 @@ void ActiveSolver::update(System &theSys)
     //std::cout << "D: " << anGen->D << std::endl; //make this into a unit test
 
     for(int i=0; i<theSys.N; i++) {
+        if(i==0 && do_pin_node) continue; //skip updating position of 1st node
         arma::vec pos = theSys.network[i].get_pos();
         for(int k=0; k<theSys.dim; k++) {
             //Euler step
@@ -96,6 +97,7 @@ void ActiveSolver::update_adaptive(System &theSys, double deet, int level)
 
     //Check whether the new position will result in a really large force
     for(int i=0; i<theSys.N; i++){
+        if(i==0 && do_pin_node) continue; //skip updating position of 1st node
         theSys.network[i].old_pos = theSys.network[i].pos;
         theSys.network[i].pos += incr[i];
     }
@@ -196,6 +198,17 @@ std::vector<arma::vec> ActiveSolver::get_thermal_forces(System &theSys, double d
     for (int i=0; i<theSys.N; i++) {
         for (int k=0; k<theSys.dim; k++) {
             thermal_forces[i][k] = sqrt(2*theSys.kT/gamma)*gsl_ran_gaussian(rg, sqrt(deet)); 
+        }
+    }
+
+    //Subtract out center of mass force (velocity)
+    if (do_subtract_com==1) {
+        arma::vec com_vel(theSys.dim, arma::fill::zeros);
+        for(int i=0; i<theSys.N; i++) {
+            com_vel += thermal_forces[i];
+        }
+        for(int i=0; i<theSys.N; i++) {
+            thermal_forces[i] -= com_vel/theSys.N;
         }
     }
     

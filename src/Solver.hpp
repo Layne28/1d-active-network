@@ -18,6 +18,7 @@ public:
     double gamma; //friction
     double D; //D=kT/gamma (Einstein relation)
     int do_subtract_com; //if 1, subtract center of mass force from random forces
+    int do_pin_node; //if 1, pin the first node (don't let its position change)
 
     gsl_rng *rg;
 

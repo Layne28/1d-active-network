@@ -6,13 +6,20 @@ Solver::Solver(ParamDict &theParams, gsl_rng *&the_rg)
     gamma = 1.0;
     D = 1.0;
     do_subtract_com = 0;
+    do_pin_node = 0;
 
     double kT=1.0; //temporary, used to compute D
     if(theParams.is_key("dt")) dt = std::stod(theParams.get_value("dt"));
     if(theParams.is_key("gamma")) gamma = std::stod(theParams.get_value("gamma"));
     if(theParams.is_key("kT")) kT = std::stod(theParams.get_value("kT")); 
-    if(theParams.is_key("do_subtract_com")) do_subtract_com = std::stoi(theParams.get_value("do_subtract_com")); 
+    if(theParams.is_key("do_subtract_com")) do_subtract_com = std::stoi(theParams.get_value("do_subtract_com"));
+    if(theParams.is_key("do_pin_node")) do_pin_node = std::stoi(theParams.get_value("do_pin_node")); 
     //std::cout << dt << std::endl;
+
+    if(do_subtract_com && do_pin_node){
+        std::cout << "WARNING: Can't pin node and subtract c.o.m. at the same time! Defaulting to pinning node." << std::endl;
+        do_subtract_com = 0;
+    }
 
     //TODO: check that this kT is the same as that of the System being solved!
     D = kT/gamma;
