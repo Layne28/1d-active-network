@@ -13,6 +13,8 @@ def main():
 
     in_folder = sys.argv[1]
 
+    which_subdir = 'equil' #load from 'equil' or 'prod'
+
     #Must be given or assume an equilibrium bond length
     leq = 1.0
 
@@ -34,7 +36,7 @@ def main():
         N, Lx, Ly, Lz, ref_lat = load_ref(eq_traj)
 
         #Load trajectory
-        traj = h5py.File(subfolder+'/prod/traj.h5')
+        traj = h5py.File(subfolder+'/%s/traj.h5' % which_subdir)
         pos = np.array(traj['/particles/all/position/value'])
         bonds = np.array(traj['/connectivity/all_bonds'])
         print(pos.shape)
@@ -129,10 +131,43 @@ def get_strain_arr(pos, bond_list, N, Lx, Ly, Lz, leq):
     return strain_arr
 
 @numba.jit(nopython=True)
+def get_strain_arr_1d(pos, N, Lx, leq):
+
+    nframes = pos.shape[0]
+    nbonds = N
+    strain_arr = np.zeros((nframes, nbonds, 3))
+
+    for t in range(nframes):
+        for i in range(nbonds):
+            min_disp_vec = get_min_disp_1d(pos[t,i,:], pos[t,(i+1)%N,:], Lx)
+            pos1, pos2 = pos[t,i,:], pos[t,(i+1)%N,:]-min_disp_vec
+            if la.norm(pos1-pos2)>2:
+                print('Error!!')
+            strain = la.norm(min_disp_vec)-leq
+            strain_arr[t][i][0] = pos1[0]
+            strain_arr[t][i][1] = pos2[0]
+            strain_arr[t][i][2] = strain
+    return strain_arr
+
+@numba.jit(nopython=True)
 def apply_min_image(disp_r, Lx, Ly, Lz):
     new_disp = np.zeros((disp_r.shape))
     for i in range(new_disp.shape[0]):
         new_disp[i,:] = get_min_disp(disp_r[i,:],np.zeros(3),Lx,Ly,Lz)
+    return new_disp
+
+@numba.jit(nopython=True)
+def apply_min_image_1d(disp_r, Lx):
+    new_disp = np.zeros((disp_r.shape))
+    for i in range(new_disp.shape[0]):
+        new_disp[i,:] = get_min_disp(disp_r[i,:],np.zeros(1),Lx)
+    return new_disp
+
+@numba.jit(nopython=True)
+def apply_min_image_1d(disp_r, Lx):
+    new_disp = np.zeros((disp_r.shape))
+    for i in range(new_disp.shape[0]):
+        new_disp[i,:] = get_min_disp(disp_r[i,:],np.zeros(1),Lx)
     return new_disp
 
 @numba.jit(nopython=True) 
@@ -140,6 +175,16 @@ def get_min_disp(r1, r2, Lx, Ly, Lz):
     arr1 = np.array([Lx/2,Ly/2,Lz/2])
     arr2 = np.array([-Lx/2,-Ly/2,-Lz/2])
     arr3 = np.array([Lx, Ly, Lz])
+    rdiff = r1-r2
+    rdiff = np.where(rdiff>arr1, rdiff-arr3, rdiff)
+    rdiff = np.where(rdiff<arr2, rdiff+arr3, rdiff)
+    return rdiff
+
+@numba.jit(nopython=True) 
+def get_min_disp_1d(r1, r2, Lx):
+    arr1 = np.array([Lx/2])
+    arr2 = np.array([-Lx/2])
+    arr3 = np.array([Lx])
     rdiff = r1-r2
     rdiff = np.where(rdiff>arr1, rdiff-arr3, rdiff)
     rdiff = np.where(rdiff<arr2, rdiff+arr3, rdiff)

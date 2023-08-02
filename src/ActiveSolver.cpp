@@ -11,6 +11,7 @@ ActiveSolver::ActiveSolver(System &theSys, ParamDict &theParams, gsl_rng *&the_r
     out.precision(15);
     out << std::fixed << dee_x;
     theParams.add_entry("dx", out.str());
+    theParams.add_entry("dim", "1"); //make sure the Generator has dim=1!
     anGen = new Generator(theParams, the_rg);
 
     //std::cout << theParams.get_value("dx") << std::endl;

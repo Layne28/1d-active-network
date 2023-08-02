@@ -107,6 +107,7 @@ def main():
         f.write('\n')
 
         f.write('#Active Noise Generator\n')
+        f.write('dim = %s\n' % args.dim)
         f.write('nx = %s\n' % args.nx)
         f.write('tau = %s\n' % args.tau)
         f.write('lambda = %s\n' % args.Lambda)
